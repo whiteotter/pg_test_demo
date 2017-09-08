@@ -1,0 +1,4 @@
+- type: serial
+  service: demo
+  steps:
+    - command: /bin/bash -c 'sleep 4 && echo "select version();" | psql'
