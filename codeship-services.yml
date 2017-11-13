@@ -1,20 +1,18 @@
-version: '3'
-services:
-  demo:
-    build:
-      image: whiteotter/pg-test-demo
-      dockerfile: Dockerfile
-    environment:
-      PGHOST: pg_test_db
-      PGUSER: postgres
-      PGPASSWORD: password
-      PGDATABASE: pg_test
-    links:
-      - pg_test_db
+demo:
+  build:
+    image: whiteotter/pg-test-demo
+    dockerfile: Dockerfile
+  environment:
+    PGHOST: pg_test_db
+    PGUSER: postgres
+    PGPASSWORD: password
+    PGDATABASE: pg_test
+  links:
+    - pg_test_db
 
-  pg_test_db:
-    image: postgres:9.5
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: pg_test
+pg_test_db:
+  image: postgres:9.5
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: password
+    POSTGRES_DB: pg_test
